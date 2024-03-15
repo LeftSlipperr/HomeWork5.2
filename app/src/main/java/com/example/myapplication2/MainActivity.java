@@ -34,15 +34,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 i++;
-                tv1.setText(Integer.toString(i));
-                viewModel.name.postValue(tv1.getText().toString());
+                viewModel.counter.setValue(i);;
             }
         });
 
-        viewModel.name.observe(this, new Observer<String>() {
+        viewModel.counter.observe(this, new Observer<Integer>() {
             @Override
-            public void onChanged(String s) {
-                tv1.setText(viewModel.name.getValue());
+            public void onChanged(Integer integer) {
+                tv1.setText(Integer.toString(viewModel.counter.getValue()));
             }
         });
 

@@ -6,4 +6,5 @@ import androidx.lifecycle.ViewModel;
 public class MainViewModel extends ViewModel {
 //    public String name = "";
     public MutableLiveData<String> name = new MutableLiveData<>("");
+    public MutableLiveData<Integer> counter = new MutableLiveData<>();
 }
